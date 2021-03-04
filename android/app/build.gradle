@@ -132,6 +132,9 @@ android {
         applicationId "com.unity_demo"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
         versionCode 1
         versionName "1.0"
     }
