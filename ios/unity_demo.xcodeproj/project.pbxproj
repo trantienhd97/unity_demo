@@ -20,6 +20,8 @@
 		E625D8E50D17A64E839804B5 /* libPods-unity_demo-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F14D029B9F65FB3AC3731FA /* libPods-unity_demo-tvOS.a */; };
 		F28723E6A391575E5CA29C47 /* libPods-unity_demo-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDEA2586F706CE9AB50089C /* libPods-unity_demo-tvOSTests.a */; };
 		F7BECEFF44E2385E21AD3EEA /* libPods-unity_demo-unity_demoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9217E7B906D69BA5A01B9FE5 /* libPods-unity_demo-unity_demoTests.a */; };
+		FF6E0F5125F2195A003877EA /* IOTContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6E0F5025F2195A003877EA /* IOTContainer.m */; };
+		FF6E0F5D25F21B4A003877EA /* IOTContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6E0F5C25F21B4A003877EA /* IOTContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,9 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F4315DF3C3274B5B02BC5FA9 /* Pods-unity_demo-unity_demoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unity_demo-unity_demoTests.release.xcconfig"; path = "Target Support Files/Pods-unity_demo-unity_demoTests/Pods-unity_demo-unity_demoTests.release.xcconfig"; sourceTree = "<group>"; };
+		FF6E0F5025F2195A003877EA /* IOTContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOTContainer.m; sourceTree = "<group>"; };
+		FF6E0F5B25F21B49003877EA /* unity_demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "unity_demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		FF6E0F5C25F21B4A003877EA /* IOTContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,12 +164,15 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				FF6E0F5025F2195A003877EA /* IOTContainer.m */,
+				FF6E0F5C25F21B4A003877EA /* IOTContainer.swift */,
 				13B07FAE1A68108700A75B9A /* unity_demo */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* unity_demoTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D1F1BDB6F6A688E1EC2F8D38 /* Pods */,
+				FF6E0F5B25F21B49003877EA /* unity_demo-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -194,7 +202,6 @@
 				3F1D7BC677752E5343A1FAD8 /* Pods-unity_demo-unity_demoTests.debug.xcconfig */,
 				F4315DF3C3274B5B02BC5FA9 /* Pods-unity_demo-unity_demoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -294,7 +301,8 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						DevelopmentTeam = 4JBU2XTM9L;
+						LastSwiftMigration = 1240;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -568,7 +576,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF6E0F5D25F21B4A003877EA /* IOTContainer.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				FF6E0F5125F2195A003877EA /* IOTContainer.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,6 +620,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3F1D7BC677752E5343A1FAD8 /* Pods-unity_demo-unity_demoTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -633,6 +644,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F4315DF3C3274B5B02BC5FA9 /* Pods-unity_demo-unity_demoTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = unity_demoTests/Info.plist;
@@ -656,6 +668,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4JBU2XTM9L;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = unity_demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -666,6 +679,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = unity_demo;
+				SWIFT_OBJC_BRIDGING_HEADER = "unity_demo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -679,6 +693,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4JBU2XTM9L;
 				INFOPLIST_FILE = unity_demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -688,6 +703,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = unity_demo;
+				SWIFT_OBJC_BRIDGING_HEADER = "unity_demo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

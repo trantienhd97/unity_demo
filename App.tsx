@@ -16,11 +16,16 @@ import {
   Button,
   Text,
   NativeModules,
+  Platform,
 } from 'react-native';
 
 const App = () => {
   const handleOpenUnityDemo = React.useCallback(() => {
-    NativeModules.UnityContainer.createEvent();
+    if (Platform.OS === 'android') {
+      NativeModules.UnityContainer.createEvent();
+    } else {
+      NativeModules.IOTContainer.ShowMessage('Test', 0.5);
+    }
   }, []);
   return (
     <>
